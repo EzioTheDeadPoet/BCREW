@@ -14,45 +14,16 @@ public class BatchCopyReplaceEndsWith {
 			helpText();
 			return;
 		}
-		if (args[0].equals("-h")
-		||args[0].equals("-H")
-		||args[0].equals("-help")
-		||args[0].equals("-Help")) {
-			helpText();
-			return;
-		}
-		if (args.length == 3) {
-			String fileEnding = args[0];
-			String sourceFilePath = args[1];
-			String workingPath = args[2];
-				
-			Path sourceFile = new File(sourceFilePath).toPath();
-					
-			List<File> fileList = searchFiles(workingPath,fileEnding);
-			if (fileList == null) {
-				System.out.println("No File Found!");
-				helpText();
+
+		if (args.length >= 3) {
+			if (helpCheck(args)) {
 				return;
 			}
-			System.out.println("Selected Origin File: \"" + sourceFile + "\"");
-			
-			for (File f : fileList) {
-				try {
-					Files.copy(sourceFile, f.toPath(), StandardCopyOption.REPLACE_EXISTING);
-					System.out.println("Replacing \"" + f + "\" Successful.");
-				} catch (IOException e) {
-					System.out.println("Replacing \"" + f + "\" Failed.");
-				}
-			}
-	
-			return;
-		}
-		if (args.length == 4) {
-			
 			String fileEnding = args[0];
 			String sourceFilePath = args[1];
 			String workingPath = args[2];
-			String outputPath = args[3];
+			String outputPath = workingPath;
+			if (args.length == 4) {outputPath = args[3];}
 				
 			Path sourceFile = new File(sourceFilePath).toPath();
 					
@@ -103,13 +74,28 @@ public class BatchCopyReplaceEndsWith {
 		return fileList;
 	}
 	
+	public static Boolean helpCheck(String[] args) {
+		
+		for (int i=0 ; i < args.length  ; i++ ) {
+			if (args[i].equals("-h")
+					||args[i].equals("-H")
+					||args[i].equals("-help")
+					||args[i].equals("-Help")) {
+				helpText();
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public static void helpText() {
 		System.out.println("How to Use:");
+		System.out.println("");
 		System.out.println("Argument 1: EndsWithSelector (Endstring of Filesnames to replace.)");
 		System.out.println("Argument 2: Source File (Copy Target)");
 		System.out.println("Argument 3: Target Directory (Files to replace/Filestructure to mirror with Argument 4)");
 		System.out.println("Argument 4: Output Directory");
+		System.out.println("");
 		System.out.println("This creates NO backup of replaced files. Use Argument 4 to clone the file stucture contained in the directory of A3 with the file from A2.");
 		return;
 		
