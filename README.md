@@ -8,24 +8,10 @@ Could potentially be upgraded to do more in the future.
 ## Use
 
 **There are no backups created. So use carefully.**
+*Use Argument 4 to clone the file stucture contained in the directory  of A3 with the file from A2.As an less destructive alternative.*
 
-`Java -jar BCREW.jar "Argument 1" "Argument 2" "Argument 3"`
-
-These are the used arguments:
-- Argument 1: Source File (Copy Target)
-- Argument 2: Target Directory (Folder containing the files to replace)
-- Argument 3: EndsWithSelector (Endstring of files to replace.)
-
-### Example:
-
-**Input:**
-```powershell
-java -jar .\BCREW.jar "C:\Users\ANONYMOUS\Documents\test0.txt" "C:\Users\ANONYMOUS\Documents\test" ".txt"
-```
-
-**Output:**
-```powershell
-Copying "C:\Users\ANONYMOUS\Documents\test0.txt".
-Replacing "C:\Users\ANONYMOUS\Documents\test\test1\test.txt" Successful.
-Replacing "C:\Users\ANONYMOUS\Documents\test\test2.txt" Successful.
-```
+Run the program with the following 3 arguments:
+- Argument 1: EndsWithSelector (Endstring of Filesnames to replace.)
+- Argument 2: Source File (Copy Target)
+- Argument 3: Argument 3: Target Directory (Files to replace/Filestructure to mirror with Argument 4)
+- Argument 4: Output Directory
