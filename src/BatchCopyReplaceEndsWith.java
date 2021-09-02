@@ -28,11 +28,12 @@ public class BatchCopyReplaceEndsWith {
 			Path sourceFile = new File(sourceFilePath).toPath();
 					
 			List<File> fileList = searchFiles(workingPath,fileEnding);
-			if (fileList == null) {
+			if (fileList == null || !sourceFile.toFile().exists()) {
 				System.out.println("No File Found!");
 				helpText();
 				return;
 			}
+			
 			System.out.println("Selected Origin File: \"" + sourceFile + "\".");
 			
 			for (File f : fileList) {
@@ -51,7 +52,6 @@ public class BatchCopyReplaceEndsWith {
 					System.out.println("Creating Copy at \"" + targetFile + "\" Failed.");
 				}
 			}
-		
 			return;
 		}
 	}
@@ -98,7 +98,5 @@ public class BatchCopyReplaceEndsWith {
 		System.out.println("");
 		System.out.println("This creates NO backup of replaced files. Use Argument 4 to clone the file stucture contained in the directory of A3 with the file from A2.");
 		return;
-		
 	}
-
 }
