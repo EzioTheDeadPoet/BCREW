@@ -34,7 +34,7 @@ public class BatchCopyReplaceEndsWith {
 				helpText();
 				return;
 			}
-			System.out.println("Copying \"" + sourceFile + "\".");
+			System.out.println("Selected Origin File: \"" + sourceFile + "\"");
 			
 			for (File f : fileList) {
 				try {
@@ -62,7 +62,7 @@ public class BatchCopyReplaceEndsWith {
 				helpText();
 				return;
 			}
-			System.out.println("Copying \"" + sourceFile + "\".");
+			System.out.println("Selected Origin File: \"" + sourceFile + "\".");
 			
 			for (File f : fileList) {
 				File targetFile = new File(f.getAbsolutePath().replace(workingPath, outputPath));
@@ -74,17 +74,10 @@ public class BatchCopyReplaceEndsWith {
 					}
 				}	
 				try {
-					if (!targetFile.exists()) {
-						if(targetFile.createNewFile()) {
-							System.out.println("Created \"" + targetFile + "\" Dummy File.");
-						} else {
-							System.out.println("Failed to create \"" + targetFile + "\" Dummy File.");
-						}
-					}
 					Files.copy(sourceFile, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-					System.out.println("Replacing of \"" + targetFile + "\" Successful.");
+					System.out.println("Creating Copy at \"" + targetFile + "\" Successful.");
 				} catch (IOException e) {
-					System.out.println("Replacing of \"" + targetFile + "\" Failed.");
+					System.out.println("Creating Copy at \"" + targetFile + "\" Failed.");
 				}
 			}
 		
