@@ -30,8 +30,8 @@ java -jar .\BCREW.jar ".txt" "C:\Users\ANONYMOUS\Documents\test0.txt" "C:\Users\
 **Output:**
 
 ```powershell
-Selected Origin File: "C:\Users\ANONYMOUS\Documents\test0.txt"
+Selected Origin File: "C:\Users\ANONYMOUS\Documents\test0.txt".
 Created "C:\Users\ANONYMOUS\Documents\testOUTPUT\test1" Direcory.
-Replacing of "C:\Users\ANONYMOUS\Documents\testOUTPUT\test1\test.txt" Successful.
-Replacing of "C:\Users\ANONYMOUS\Documents\testOUTPUT\test2.txt" Successful.
+Creating Copy at "C:\Users\ANONYMOUS\Documents\testOUTPUT\test1\test.txt" Successful.
+Creating Copy at "C:\Users\ANONYMOUS\Documents\testOUTPUT\test2.txt" Successful.
 ```
