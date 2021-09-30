@@ -16,7 +16,7 @@ Java -jar BCREW.jar "Argument 1" "Argument 2" "Argument 3" "Argument 4(Optional)
 
 Run the program with the following 3 arguments:
 - Argument 1: EndsWithSelector (Endstring of Filesnames to replace.)
-- Argument 2: Source File (Copy Target)
+- Argument 2: Source File (Copy Target) Or `--JustCopy` `-jc` to just copy the files and don't replace them.
 - Argument 3: Argument 3: Target Directory (Files to replace/Filestructure to mirror with Argument 4)
 - Argument 4(Optional): Output Directory
 
