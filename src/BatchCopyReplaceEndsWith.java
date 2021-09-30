@@ -31,12 +31,14 @@ public class BatchCopyReplaceEndsWith {
 				System.out.println("No File Found!");
 				helpText();
 				return;
+
 			}
+			System.out.println("Selected Origin File: \"" + sourceFile + "\".");
 		}
 		List<File> fileList = searchFiles(workingPath,fileEnding);
 
 
-		System.out.println("Selected Origin File: \"" + sourceFile + "\".");
+
 
 		for (File f : fileList) {
 			File targetFile = new File(f.getAbsolutePath().replace(workingPath, outputPath));
@@ -49,6 +51,7 @@ public class BatchCopyReplaceEndsWith {
 			}
 			try {
 				if (args[1].equals("--JustCopy")||args[1].equals("-jc")){
+					System.out.println("JUST COPY");
 					Files.copy(f.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				} else {
 					Files.copy(sourceFile, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
