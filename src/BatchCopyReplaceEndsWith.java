@@ -24,7 +24,8 @@ public class BatchCopyReplaceEndsWith {
 		String outputPath = workingPath;
 		if (args.length == 4) {outputPath = args[3];}
 		Path sourceFile = new File("").toPath();
-		if (args[1].equals("--JustCopy")||args[1].equals("-jc")) {
+		if (args[1].equals("--JustCopy")||args[1].equals("-jc")) {}
+		else{
 			sourceFile = new File(sourceFilePath).toPath();
 			if (!sourceFile.toFile().exists()) {
 				System.out.println("No File Found!");
