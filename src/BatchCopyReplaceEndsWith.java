@@ -101,7 +101,7 @@ public class BatchCopyReplaceEndsWith {
 	public static void helpText() {
 		System.out.println("How to Use:\n");
 		System.out.println("Argument 1: EndsWithSelector (EndString of Filenames to replace.)");
-		System.out.println("Argument 2: Source File (Copy Target) Or --JustCopy/-jc to just copy the files and don't replace them. \n  Or --JustMove/-jm to just move the files");
+		System.out.println("Argument 2: Source File (Copy Target) Or \n --JustCopy/-jc to just copy the files and don't replace them. \n  Or --JustMove/-jm to just move the files and don't replace them.");
 		System.out.println("Argument 3: Target Directory (Files to replace/FileStructure to mirror with Argument 4)");
 		System.out.println("Argument 4: Output Directory\n");
 		System.out.println("This creates NO backup of replaced files. Use Argument 4 to clone the file Structure contained in the directory of A3 with the file from A2.");
