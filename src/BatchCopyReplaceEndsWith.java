@@ -53,6 +53,9 @@ public class BatchCopyReplaceEndsWith {
 				if (args[1].equals("--JustCopy")||args[1].equals("-jc")){
 					System.out.println("JUST COPY");
 					Files.copy(f.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				} else if (args[1].equals("--JustMove")||args[1].equals("-jm")) {
+					System.out.println("JUST MOVE");
+					Files.move(f.toPath(), targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				} else {
 					Files.copy(sourceFile, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 				}
@@ -98,7 +101,7 @@ public class BatchCopyReplaceEndsWith {
 	public static void helpText() {
 		System.out.println("How to Use:\n");
 		System.out.println("Argument 1: EndsWithSelector (EndString of Filenames to replace.)");
-		System.out.println("Argument 2: Source File (Copy Target) Or --JustCopy/-jc to just copy the files and don't replace them.");
+		System.out.println("Argument 2: Source File (Copy Target) Or --JustCopy/-jc to just copy the files and don't replace them. \n  Or --JustMove/-jm to just move the files");
 		System.out.println("Argument 3: Target Directory (Files to replace/FileStructure to mirror with Argument 4)");
 		System.out.println("Argument 4: Output Directory\n");
 		System.out.println("This creates NO backup of replaced files. Use Argument 4 to clone the file Structure contained in the directory of A3 with the file from A2.");
